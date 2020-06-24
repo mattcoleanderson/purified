@@ -1,5 +1,7 @@
 # Purification
 
+![purification is beautiful](./screenshot.png)
+
 > Purity purified by purification - even more minimal and fast Zsh prompt
 
 ## Overview
