@@ -18,6 +18,7 @@
 # %m => shortname host
 # %(?..) => prompt conditional - %(condition.true.false)
 
+# Display git status
 git_prompt_status() {
   local INDEX STATUS
   INDEX=$(command git status --porcelain -b 2> /dev/null)
@@ -72,7 +73,7 @@ git_prompt_status() {
   fi
 }
 
-
+# Pass a line for every prompt call
 prompt_purity_precmd() {
     # Pass a line before each prompt
     print -P ''
@@ -86,30 +87,8 @@ prompt_git_branch() {
     zstyle ':vcs_info:git:*' formats '%b'
 }
 
-git_prompt_info() {
+prompt_git_info() {
     [ ! -z "$vcs_info_msg_0_" ] && echo "$ZSH_THEME_GIT_PROMPT_PREFIX$vcs_info_msg_0_$ZSH_THEME_GIT_PROMPT_SUFFIX"
-}
-
-change_cursor_vim() {
-    function zle-keymap-select {
-    if [[ ${KEYMAP} == vicmd ]] ||
-        [[ $1 = 'block' ]]; then
-        echo -ne '\e[1 q'
-    elif [[ ${KEYMAP} == main ]] ||
-        [[ ${KEYMAP} == viins ]] ||
-        [[ ${KEYMAP} = '' ]] ||
-        [[ $1 = 'beam' ]]; then
-        echo -ne '\e[5 q'
-    fi
-    }
-    zle -N zle-keymap-select
-    zle-line-init() {
-        zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-        echo -ne "\e[5 q"
-    }
-    zle -N zle-line-init
-    echo -ne '\e[5 q' # Use beam shape cursor on startup.
-    preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 }
 
 prompt_purification_setup() {
@@ -136,9 +115,8 @@ prompt_purification_setup() {
     ZSH_THEME_GIT_PROMPT_AHEAD="%B%F{green}%f%b "
 
     prompt_git_branch
-    RPROMPT='$(git_prompt_info) $(git_prompt_status)'
+    RPROMPT='$(prompt_git_info) $(git_prompt_status)'
     PROMPT=$'%F{white}%~ %B%F{blue}>%f%b '
-    change_cursor_vim
 }
 
 prompt_purification_setup
