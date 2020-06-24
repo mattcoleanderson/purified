@@ -20,4 +20,4 @@ Most prompts are cluttered, ugly and slow. I'm not sure mine is better, but I li
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) © [Kevin Lanni](https://github.com/therealklanni)
+[MIT](http://opensource.org/licenses/MIT)
