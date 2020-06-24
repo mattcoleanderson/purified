@@ -10,7 +10,7 @@ Most prompts are cluttered, ugly and slow. I'm not sure mine is better, but I li
 
 * I needed some `git` infos to remind me where the heck is my code? Oh yeah my stash is full.
 * I don't like cluttered Zsh framework anymore. I needed something without any dependency I could modify myself easily when I'm bored.
-* There is the Greek lambda letter in your prompt to represent a branch, to teach you that everything can be build from Lambda, and to remind you that Half Life is a great game.
+* There is the Greek lambda letter in your prompt to represent a branch, to teach you that everything can be build from Lambda expressions, and to remind you that Half Life is a great game.
 
 ## Install
 
