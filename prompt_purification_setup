@@ -118,9 +118,6 @@ prompt_purification_setup() {
     autoload -Uz add-zsh-hook
     add-zsh-hook precmd prompt_purity_precmd
 
-    # show username@host if logged in through SSH
-    [[ "$SSH_CONNECTION" != '' ]] && prompt_purity_username='%n@%m '
-
     ZSH_THEME_GIT_PROMPT_PREFIX=" %F{yellow}λ:%f%F{blue}"
     ZSH_THEME_GIT_PROMPT_DIRTY=""
     ZSH_THEME_GIT_PROMPT_CLEAN=""
