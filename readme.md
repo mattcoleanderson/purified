@@ -20,7 +20,6 @@ Most prompts are cluttered, ugly and slow. I'm not sure mine is better, but I li
 1. Download `prompt_purification_setup` in a folder.
 2. Add the folder path in your fpath (in your `zshrc`): `fpath=(/the/folder/where/there/is/the/prompt $fpath)`
 3. Autoload it in your `zshrc`: `autoload -Uz prompt_purification_setup && prompt_purification_setup`
-4. You don't like it? Go to hell! You can modify it, too.
 
 ## License
 
